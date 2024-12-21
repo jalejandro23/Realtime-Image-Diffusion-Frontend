@@ -7,6 +7,12 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { text } = body;
 
+    const apiKey = request.headers.get("X-API-KEY");
+
+    if (apiKey !== process.env.API_KEY) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    }
+
     // TODO: Call your Image Generation API here
     // For now, we'll just echo back the text
     console.log(text);
@@ -47,7 +53,7 @@ export async function POST(request: Request) {
       imageUrl: blob.url,
     });
 
-    
+
   } catch (error) {
     return NextResponse.json(
       { success: false, error: "Failed to process request" },
