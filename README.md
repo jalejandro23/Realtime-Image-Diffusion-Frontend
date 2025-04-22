@@ -43,3 +43,10 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+## Backend
+
+The backend for this project is available here:  
+👉 [Realtime-Image-Diffusion Backend](https://github.com/jalejandro23/Realtime-Image-Diffusion)
+
+It handles image generation using FastAPI and the Hugging Face Diffusers library, with async WebSocket communication to the frontend.
